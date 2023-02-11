@@ -33,18 +33,26 @@ function playRound()
         || (player === "paper" && computer === 'scissors')
         || (player === "scissors" && computer === 'rock'))
     {
-        console.log(`You lose! ${capitalize(computer)} beats ${player}!`);
+        return `You lose! ${capitalize(computer)} beats ${player}!`;
     } 
 
     else if((computer === "rock" && player === 'paper')
     || (computer === "paper" && player === 'scissors')
     || (computer === "scissors" && player === 'rock'))
     {
-        console.log(`You win! ${capitalize(player)} beats ${computer}!`);
+        return `You win! ${capitalize(player)} beats ${computer}!`;
     }
 
     else
     {
-        console.log("Draw!");
+        return "Draw!";
+    }
+}
+
+function game()
+{
+    for(let i = 0; i != 5; ++i)
+    {
+        console.log(playRound());
     }
 }
