@@ -51,7 +51,6 @@ function reset()
     document.querySelector(".final-results").style.visibility = "hidden";
     document.querySelector("#round-result").textContent = `Play the game to see the result!`;
     document.querySelector("#scores").textContent = `Player: 0 Computer 0`;
-    document.querySelector("h3").textContent = ``;
 
     buttons.forEach((button) => button.disabled = false );
 }
@@ -104,5 +103,5 @@ buttons.forEach((button) => {
     button.addEventListener("click", playRound);
 });
 
-const resetButton = document.querySelector("#btn_reset");
+const resetButton = document.querySelector("#btn-reset");
 resetButton.addEventListener("click", reset);

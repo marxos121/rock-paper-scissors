@@ -1,3 +1,20 @@
+body
+{
+    color: red;
+    background-color: rgb(26, 25, 25);
+}
+
 button{
+    background-color: transparent;
+}
+.buttons {
+    cursor: pointer;
+}
+
+.final-results{
+    visibility: hidden;
+}
+
+#btn-reset{
     cursor: pointer;
 }
