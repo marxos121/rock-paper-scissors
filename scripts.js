@@ -11,27 +11,6 @@ function getComputerChoice(){
     return "scissors";
 }
 
-function getPlayerChoice()
-{
-    let choice = null;
-    while(!choice){
-        choice = prompt("Rock/Paper/Scissors?");
-        if(!choice)
-        {
-            continue;
-        }
-
-        choice = choice.toLowerCase();
-
-        if(choice === 'rock' || choice === 'paper' || choice === 'scissors')
-        {
-            return choice;
-        }
-
-        choice = null;
-    }
-}
-
 function check(player, computer)
 {
     if((player === "rock" && computer === 'paper')
@@ -54,7 +33,7 @@ function check(player, computer)
     }
 }
 
-function updateResult(roundResult)
+function displayResult(roundResult)
 {
     const res = document.querySelector('.round-result');
     res.textContent = roundResult;
@@ -63,14 +42,22 @@ function updateResult(roundResult)
 
 function playRound()
 {
-    let player = getPlayerChoice();
+    let player = null;
+
+    switch(this.id)
+    {
+        case 'btn_paper': player = 'paper'; break;
+        case 'btn_rock': player = 'rock'; break;
+        case 'btn_scissors': player = 'scissors'; break;
+    }
+
     let computer = getComputerChoice();
 
     let roundResult = check(player, computer);
-    updateResult(roundResult);
+    displayResult(roundResult);
 }
 
-const buttons = document.querySelectorAll('.btn');
+const buttons = document.querySelectorAll('.buttons');
 console.log(buttons);
 buttons.forEach((button) => { 
     button.addEventListener("click", playRound);
