@@ -35,8 +35,11 @@ function check(player, computer)
 
 function displayResult(roundResult)
 {
-    const res = document.querySelector('.round-result');
+    const res = document.querySelector('#round-result');
     res.textContent = roundResult;
+
+    const score = document.querySelector('#scores');
+    score.textContent = `Player: ${playerScore}; Computer: ${computerScore}`
 }
 
 
