@@ -7,16 +7,30 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <img src="img/player.png">
-    <img src="img/AI.png">
-    <button id="ai_rock"><img src="img/rock.png"></button>
-    <button id="ai_paper"><img src="img/paper.png"></button>
-    <button id="ai_scissors"><img src="img/scissors.png"></button>
-    <button class="buttons" id="btn_rock"><img src="img/rock.png"></button>
-    <button class="buttons" id="btn_paper"><img src="img/paper.png"></button>
-    <button class="buttons" id="btn_scissors"><img src="img/scissors.png"></button>
-    <div id="round-result">Play the game to see the result!</div>
-    <div id="scores">Player: 0 Computer 0</div>
+    <div class="arena">
+        <div class="side">
+            <p id="player-score">0</p>
+            <img src="img/player.png">
+            <div class="weapons">
+                <button class="buttons" id="btn-rock"><img src="img/rock.png"></button>
+                <button class="buttons" id="btn-paper"><img src="img/paper.png"></button>
+                <button class="buttons" id="btn-scissors"><img src="img/scissors.png"></button>
+            </div>
+        </div>
+
+        <div class="side">
+            <div class="weapons">
+                <button id="ai-rock"><img src="img/rock.png"></button>
+                <button id="ai-paper"><img src="img/paper.png"></button>
+                <button id="ai-scissors"><img src="img/scissors.png"></button>
+            </div>
+            <img src="img/AI.png">
+            <p id="ai-score">0</p>
+        </div>
+    </div>
+
+    <p id="round-result">Play the game to see the result!</p>
+
     <div class="final-results">
         <h3></h3>
         <button id="btn-reset"><img src="img/play again.png"></button>

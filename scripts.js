@@ -38,8 +38,8 @@ function displayResult(roundResult)
     const res = document.querySelector('#round-result');
     res.textContent = roundResult;
 
-    const score = document.querySelector('#scores');
-    score.textContent = `Player: ${playerScore}; Computer: ${computerScore}`
+    document.querySelector('#player-score').textContent = playerScore;
+    document.querySelector('#ai-score').textContent = computerScore;
 
 }
 
@@ -50,7 +50,8 @@ function reset()
 
     document.querySelector(".final-results").style.visibility = "hidden";
     document.querySelector("#round-result").textContent = `Play the game to see the result!`;
-    document.querySelector("#scores").textContent = `Player: 0 Computer 0`;
+    document.querySelector("#ai-score").textContent = `0`;
+    document.querySelector("#player-score").textContent = `0`;
 
     buttons.forEach((button) => button.disabled = false );
 }
@@ -82,9 +83,9 @@ function playRound()
 
     switch(this.id)
     {
-        case 'btn_paper': player = 'paper'; break;
-        case 'btn_rock': player = 'rock'; break;
-        case 'btn_scissors': player = 'scissors'; break;
+        case 'btn-paper': player = 'paper'; break;
+        case 'btn-rock': player = 'rock'; break;
+        case 'btn-scissors': player = 'scissors'; break;
     }
 
     let computer = getComputerChoice();

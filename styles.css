@@ -1,5 +1,4 @@
-body
-{
+body{
     color: red;
     background-color: rgb(26, 25, 25);
 }
@@ -7,14 +6,45 @@ body
 button{
     background-color: transparent;
 }
+
 .buttons {
     cursor: pointer;
 }
 
+#round-result{
+    text-align: center;
+    margin: 40px;
+}
+
 .final-results{
+    display: flex;
+    flex-direction: column;
     visibility: hidden;
+    align-items: center;
 }
 
 #btn-reset{
     cursor: pointer;
+}
+
+.arena{
+    display: flex;
+    justify-content: space-around;
+}
+
+.side{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.weapons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ai-score, #player-score{
+    font-size: 52px;
 }
