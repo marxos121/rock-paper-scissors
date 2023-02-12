@@ -11,7 +11,7 @@ function getComputerChoice(){
     return "scissors";
 }
 
-function check(player, computer)
+function resolveRound(player, computer)
 {
     if((player === "rock" && computer === 'paper')
         || (player === "paper" && computer === 'scissors')
@@ -40,6 +40,21 @@ function displayResult(roundResult)
 
     const score = document.querySelector('#scores');
     score.textContent = `Player: ${playerScore}; Computer: ${computerScore}`
+
+}
+
+function check()
+{
+    if(playerScore == 5)
+    {
+        const finalResult = document.querySelector('h3');
+        finalResult.textContent = "Congratulations! You win!";
+    }
+    else if(computerScore == 5)
+    {
+        const finalResult = document.querySelector('h3');
+        finalResult.textContent = "Oh no!";
+    }
 }
 
 
@@ -56,8 +71,9 @@ function playRound()
 
     let computer = getComputerChoice();
 
-    let roundResult = check(player, computer);
+    let roundResult = resolveRound(player, computer);
     displayResult(roundResult);
+    check();
 }
 
 const buttons = document.querySelectorAll('.buttons');
