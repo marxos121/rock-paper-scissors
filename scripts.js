@@ -43,6 +43,19 @@ function displayResult(roundResult)
 
 }
 
+
+function reset()
+{
+    playerScore = computerScore = 0;
+
+    document.querySelector("body").removeChild(document.querySelector("#btn_reset"));
+    document.querySelector("#round-result").textContent = `Play the game to see the result!`;
+    document.querySelector("#scores").textContent = `Player: 0 Computer 0`;
+    document.querySelector("h3").textContent = ``;
+
+    buttons.forEach((button) => button.disabled = false );
+}
+
 function check()
 {
     if(playerScore == 5)
@@ -55,6 +68,16 @@ function check()
         const finalResult = document.querySelector('h3');
         finalResult.textContent = "Oh no!";
     }
+    else { return; }
+    
+    buttons.forEach((button) => { button.disabled = true; });
+
+    const body = document.querySelector("body");
+    let resetButton = document.createElement("button");
+    resetButton.id = "btn_reset";
+    resetButton.textContent = "Play again!";
+    resetButton.addEventListener("click", reset);
+    body.appendChild(resetButton);
 }
 
 
@@ -77,7 +100,6 @@ function playRound()
 }
 
 const buttons = document.querySelectorAll('.buttons');
-console.log(buttons);
 buttons.forEach((button) => { 
     button.addEventListener("click", playRound);
 });
