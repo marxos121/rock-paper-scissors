@@ -48,7 +48,7 @@ function reset()
 {
     playerScore = computerScore = 0;
 
-    document.querySelector("body").removeChild(document.querySelector("#btn_reset"));
+    document.querySelector(".final-results").style.visibility = "hidden";
     document.querySelector("#round-result").textContent = `Play the game to see the result!`;
     document.querySelector("#scores").textContent = `Player: 0 Computer 0`;
     document.querySelector("h3").textContent = ``;
@@ -72,12 +72,8 @@ function check()
     
     buttons.forEach((button) => { button.disabled = true; });
 
-    const body = document.querySelector("body");
-    let resetButton = document.createElement("button");
-    resetButton.id = "btn_reset";
-    resetButton.textContent = "Play again!";
-    resetButton.addEventListener("click", reset);
-    body.appendChild(resetButton);
+    document.querySelector(".final-results").style.visibility = "visible";
+
 }
 
 
@@ -99,10 +95,14 @@ function playRound()
     check();
 }
 
+
+let playerScore = 0;
+let computerScore = 0;
+
 const buttons = document.querySelectorAll('.buttons');
 buttons.forEach((button) => { 
     button.addEventListener("click", playRound);
 });
 
-let playerScore = 0;
-let computerScore = 0;
+const resetButton = document.querySelector("#btn_reset");
+resetButton.addEventListener("click", reset);
