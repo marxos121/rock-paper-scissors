@@ -7,33 +7,34 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <div class="arena">
+    <div id="arena">
         <div class="side">
-            <p id="player-score">0</p>
-            <img src="img/player.png">
-            <div class="weapons">
-                <button class="buttons" id="btn-rock"><img src="img/rock.png"></button>
-                <button class="buttons" id="btn-paper"><img src="img/paper.png"></button>
-                <button class="buttons" id="btn-scissors"><img src="img/scissors.png"></button>
+            <p class="bordered" id="player-score">0</p>
+            <p class="bordered">Player</p>
+            <div class="weapons bordered">
+                <button class="buttons" id="btn-rock">ROCK</button>
+                <button class="buttons" id="btn-paper">PAPER</button>
+                <button class="buttons" id="btn-scissors">SCISSORS</button>
+            </div>
+        </div>
+        <div id="results">
+            <p class="bordered" id="round-result">Play the game to see the result!</p>
+            <div id="final-results">
+                <h3 class="bordered hide">Congratulations! You win!</h3>
+                <button class="bordered hide" id="btn-reset">Play again!</button>
             </div>
         </div>
 
         <div class="side">
-            <div class="weapons">
-                <button id="ai-rock"><img src="img/rock.png"></button>
-                <button id="ai-paper"><img src="img/paper.png"></button>
-                <button id="ai-scissors"><img src="img/scissors.png"></button>
+            <div class="weapons bordered">
+                <button class="ai-button" disabled>ROCK</button>
+                <button class="ai-button" disabled>PAPER</button>
+                <button class="ai-button" disabled>SCISSORS</button>
             </div>
-            <img src="img/AI.png">
-            <p id="ai-score">0</p>
+            <p class="bordered">Computer</p>
+            <p class="bordered" id="ai-score">0</p>
         </div>
     </div>
 
-    <p id="round-result">Play the game to see the result!</p>
-
-    <div class="final-results">
-        <h3></h3>
-        <button id="btn-reset"><img src="img/play again.png"></button>
-    </div>
 </body>
 </html>

@@ -48,7 +48,7 @@ function reset()
 {
     playerScore = computerScore = 0;
 
-    document.querySelector(".final-results").style.visibility = "hidden";
+    document.querySelector("#final-results").style.visibility = "hidden";
     document.querySelector("#round-result").textContent = `Play the game to see the result!`;
     document.querySelector("#ai-score").textContent = `0`;
     document.querySelector("#player-score").textContent = `0`;
@@ -66,13 +66,13 @@ function check()
     else if(computerScore == 5)
     {
         const finalResult = document.querySelector('h3');
-        finalResult.textContent = "Oh no!";
+        finalResult.textContent = "Oh no! You lose!";
     }
     else { return; }
     
     buttons.forEach((button) => { button.disabled = true; });
 
-    document.querySelector(".final-results").style.visibility = "visible";
+    document.querySelector("#final-results").style.visibility = "visible";
 
 }
 
@@ -106,3 +106,6 @@ buttons.forEach((button) => {
 
 const resetButton = document.querySelector("#btn-reset");
 resetButton.addEventListener("click", reset);
+
+
+document.querySelector("#final-results").style.visibility = "hidden";
