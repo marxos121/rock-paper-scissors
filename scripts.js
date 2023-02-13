@@ -76,9 +76,16 @@ function check()
 
 }
 
+function removeStyleSelect(e)
+{
+    this.classList.remove('select');
+}
+
 
 function playRound()
 {
+    this.classList.add("select");
+
     let player = null;
 
     switch(this.id)
@@ -89,6 +96,10 @@ function playRound()
     }
 
     let computer = getComputerChoice();
+    const computerButton = document.querySelectorAll('.ai-button');
+    computerButton.forEach((button) =>  {
+        if(button.textContent.toLowerCase() === computer) button.classList.add('select'); 
+    });
 
     let roundResult = resolveRound(player, computer);
     displayResult(roundResult);
@@ -102,10 +113,14 @@ let computerScore = 0;
 const buttons = document.querySelectorAll('.buttons');
 buttons.forEach((button) => { 
     button.addEventListener("click", playRound);
+    button.addEventListener("transitionend", removeStyleSelect);
 });
+
+const aiButtons = document.querySelectorAll('.ai-button');
+aiButtons.forEach((button) => button.addEventListener("transitionend", removeStyleSelect));
+
 
 const resetButton = document.querySelector("#btn-reset");
 resetButton.addEventListener("click", reset);
-
 
 document.querySelector("#final-results").style.visibility = "hidden";
